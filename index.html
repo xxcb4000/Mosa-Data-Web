@@ -6,6 +6,36 @@
   <title>Data Insights - Accueil</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      animation: typing 0.3s steps(40, end) forwards;
+    }
+
+    .typing-delay-1 {
+      animation-delay: 0.1s;
+    }
+    .typing-delay-2 {
+      animation-delay: 0.2s;
+    }
+    .typing-delay-3 {
+      animation-delay: 0.3s;
+    }
+    .typing-delay-4 {
+      animation-delay: 0.4s;
+    }
+    .typing-delay-5 {
+      animation-delay: 0.5s;
+    }
+    .typing-delay-6 {
+      animation-delay: 0.6s;
+    }
     html, body {
       height: 100%;
     }
@@ -23,14 +53,31 @@
       flex: 1;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .video-background {
       position: fixed;
       top: 0;
       left: 0;
-      height: 100%;
-      width: 100%;
+
+      width: 160%;
       overflow: hidden;
       z-index: -1;
+      animation: fadeIn 3s ease-in-out;
     }
 
     .video-background video {
@@ -70,27 +117,50 @@
     }
 
     .bloc {
-      padding: 6rem 30rem;
-      color: #fff;
+      background-color: transparent;
+      padding: 6rem 2rem;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .bloc .container {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 3rem;
+      border-radius: 12px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .bloc .container.animate {
+      opacity: 1;
+      transform: translateY(0);
+      animation-play-state: running;
     }
 
     .bloc h2 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
     }
 
     .bloc blockquote {
       font-style: italic;
-      color: #ddd;
-      max-width: 800px;
-      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      border-left: 4px solid #ff8c00;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
     }
 
     .bloc ul {
       list-style-type: disc;
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
+      padding-left: 2rem;
+      color: #eee;
     }
 
     .bloc1 { background-color: #1a1a2e; }
@@ -98,6 +168,7 @@
     .bloc3 { background-color: #0f3460; }
     .bloc4 { background-color: #1b262c; }
     .bloc5 { background-color: #202040; }
+    .bloc6 { background-color: #2c2e43; }
 
 
     .cta-button {
@@ -125,15 +196,15 @@
   </style>
 </head>
 <body>
-    <div class="video-background">
-        <video id="bg-video" autoplay muted loop playsinline onloadedmetadata="this.playbackRate=0.8">
-        <source src="video1.mp4" type="video/mp4">
-        <!-- On peut ajouter d'autres sources JS ultérieurement -->
-        Votre navigateur ne supporte pas les vidéos HTML5.
-        </video>
-    </div>
+  <div class="video-background">
+      <video id="bg-video" autoplay muted loop playsinline onloadedmetadata="this.playbackRate=0.8">
+      <source src="video1.mp4" type="video/mp4">
+      <!-- On peut ajouter d'autres sources JS ultérieurement -->
+      Votre navigateur ne supporte pas les vidéos HTML5.
+      </video>
+  </div>
   <header>
-    <h1>Mosa Data Engineering</h1>
+    <img src="mosa_data_engineering_logo_white.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
     <nav>
       <a href="#services">Services</a>
       <a href="#solutions">Solutions</a>
@@ -152,63 +223,73 @@
 
     <!-- Bloc 1 -->
     <section class="bloc bloc1">
-      <h2>Des données fiables, centralisées et structurées</h2>
-      <blockquote>« Je veux une plateforme de données qui fait autorité dans mon organisation. »</blockquote>
-      <ul>
-        <li>Construire une Single Source of Truth.</li>
-        <li>Intégrer des sources multiples (ERP, CRM, fichiers, APIs…).</li>
-        <li>Mettre en place des pipelines robustes, documentés et monitorés.</li>
-        <li>Appliquer des règles de qualité de données (validation, standardisation, dédoublonnage).</li>
-        <li>S’assurer de la traçabilité et de la gouvernance (lignage, documentation, accès maîtrisé).</li>
-      </ul>
+      <div class="container">
+        <h2>Des données fiables, centralisées et structurées</h2>
+        <blockquote class="typing-delay-1">« Je veux une plateforme de données qui fait autorité dans mon organisation. »</blockquote>
+        <ul>
+          <li class="typing-delay-2">Construire une Single Source of Truth.</li>
+          <li class="typing-delay-3">Intégrer des sources multiples (ERP, CRM, Excel, APIs…).</li>
+          <li class="typing-delay-4">Mettre en place des pipelines de données robustes, documentés et monitorés.</li>
+          <li class="typing-delay-5">Appliquer des règles de qualité de données (validation, standardisation, dédoublonnage).</li>
+          <li class="typing-delay-6">S’assurer de la traçabilité et de la gouvernance (lignage, documentation, role access).</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Bloc 2 -->
     <section class="bloc bloc2">
-      <h2>Des indicateurs clairs, alignés, et actionnables</h2>
-      <blockquote>« Je veux des indicateurs qui traduisent la stratégie en objectifs concrets. »</blockquote>
-      <ul>
-        <li>Traduire les objectifs stratégiques en KPI concrets et cohérents.</li>
-        <li>Définir des indicateurs pertinents par métier (marketing, finance, opérations, RH…).</li>
-        <li>Implémenter des systèmes de suivi continu, d’alerte et de benchmark.</li>
-        <li>Accompagner le changement culturel : formation, adoption, partage.</li>
-      </ul>
+      <div class="container">
+        <h2>Des indicateurs clairs, alignés, et actionnables</h2>
+        <blockquote class="typing-delay-1">« Je veux des indicateurs qui traduisent la stratégie en objectifs concrets. »</blockquote>
+        <ul>
+          <li class="typing-delay-2">Traduire les objectifs stratégiques en KPI concrets et cohérents.</li>
+          <li class="typing-delay-3">Définir des indicateurs pertinents par métier (marketing, finance, opérations, RH…).li>
+          <li class="typing-delay-4">Implémenter des systèmes de suivi continu, d’alerte et de benchmark.</li>
+          <li class="typing-delay-5">Accompagner le changement culturel : formation, adoption, partage.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Bloc 3 -->
     <section class="bloc bloc3">
-      <h2>Des visualisations orientées décision</h2>
-      <blockquote>« Je veux voir ce qui compte, comprendre vite, et agir. »</blockquote>
-      <ul>
-        <li>Conception de tableaux de bord dynamiques (Power BI, Tableau…).</li>
-        <li>Mise en valeur des insights clés : tendances, écarts, risques, opportunités.</li>
-        <li>Storytelling visuel pour orienter la prise de décision.</li>
-        <li>Vues adaptées aux différents publics (direction, équipe terrain, client…).</li>
-      </ul>
+      <div class="container">
+        <h2>Des visualisations orientées décision</h2>
+        <blockquote class="typing-delay-1">« Je veux voir ce qui compte, comprendre vite, et agir. »</blockquote>
+        <ul>
+          <li class="typing-delay-2">Conception de tableaux de bord dynamiques (Power BI, Tableau…).</li>
+          <li class="typing-delay-3">Mise en valeur des insights clés : tendances, écarts, risques, opportunités.</li>
+          <li class="typing-delay-4">Storytelling visuel pour orienter la prise de décision.</li>
+          <li class="typing-delay-5">Vues adaptées aux différents publics (direction, équipe terrain, client…).</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Bloc 4 -->
     <section class="bloc bloc4">
-      <h2>Un accompagnement stratégique</h2>
-      <blockquote>« Je cherche quelqu’un qui transforme la donnée en valeur. »</blockquote>
-      <ul>
-        <li>Capacité à dialoguer avec les métiers et comprendre leurs enjeux.</li>
-        <li>Structuration des modèles de données pertinents.</li>
-        <li>Connaissance des référentiels métier (énergie, finance, etc.).</li>
-        <li>Pédagogie et clarté dans les livrables.</li>
-      </ul>
+      <div class="container">
+        <h2>Un accompagnement stratégique</h2>
+        <blockquote class="typing-delay-1">« Je cherche quelqu’un qui transforme la donnée en valeur. »</blockquote>
+        <ul>
+          <li class="typing-delay-2">Capacité à dialoguer avec les métiers et comprendre leurs enjeux.</li>
+          <li class="typing-delay-3">Structuration des modèles de données pertinents.</li>
+          <li class="typing-delay-4">Connaissance des référentiels métier.</li>
+          <li class="typing-delay-5">Pédagogie et clarté dans les livrables.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Bloc 5 -->
     <section class="bloc bloc5">
-      <h2>Une approche collaborative</h2>
-      <blockquote>« Je veux une collaboration fluide, transparente, structurée. »</blockquote>
-      <ul>
-        <li>Travail en mode agile (sprints, user stories, feedbacks).</li>
-        <li>Intégration avec PO, analystes métier, développeurs.</li>
-        <li>Documentation complète, transfert de compétences.</li>
-        <li>Autonomie finale des équipes internes.</li>
-      </ul>
+      <div class="container">
+        <h2>Une approche collaborative</h2>
+        <blockquote class="typing-delay-1">« Je veux une collaboration fluide, transparente, structurée. »</blockquote>
+        <ul>
+          <li class="typing-delay-2">Travail en mode agile (sprints, user stories, feedbacks).</li>
+          <li class="typing-delay-3">Intégration avec PO, analystes métier, développeurs.</li>
+          <li class="typing-delay-4">Documentation complète, transfert de compétences.</li>
+          <li class="typing-delay-5">Autonomie finale des équipes internes.</li>
+        </ul>
+      </div>
     </section>
   </main>
 
@@ -219,5 +300,31 @@
       <a href="mailto:vincent.bonhomme@gmail.com" style="color: white; text-decoration: underline;">vincent.bonhomme@gmail.com</a>
     </p>
   </footer>
+
+  <script>
+    const blocs = document.querySelectorAll('.bloc .container');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const container = entry.target;
+          container.classList.add('animate');
+          
+          // Ajout des classes typing au moment de l'affichage
+          const typingElements = container.querySelectorAll('h2, blockquote, li');
+          typingElements.forEach((el, index) => {
+            el.classList.add('typing');
+            el.classList.add(`typing-delay-${(index % 4) + 1}`);
+          });
+
+          observer.unobserve(container);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    blocs.forEach(bloc => observer.observe(bloc));
+  </script>
 </body>
 </html>
