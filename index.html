@@ -89,7 +89,7 @@
     header {
       background-color: #0a1f44;
       color: white;
-      padding: 1rem 2rem;
+      padding: 0.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -105,6 +105,7 @@
       text-decoration: none;
       margin-left: 1.5rem;
       font-weight: 500;
+      font-size: 20px;
     }
 
     .hero {
@@ -114,6 +115,12 @@
       background: none;
       position: relative;
       z-index: 1;
+    }
+    .hero h2 {
+      font-size: 40px;
+    }
+    .hero p {
+      font-size: 20px;
     }
 
     .bloc {
@@ -125,8 +132,9 @@
     }
 
     .bloc .container {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.3);
       padding: 3rem;
+      margin: 0 5rem;
       border-radius: 12px;
       max-width: 1000px;
       width: 100%;
@@ -147,6 +155,11 @@
       margin-bottom: 1.5rem;
       color: #fff;
     }
+    .bloc h3 {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
 
     .bloc blockquote {
       font-style: italic;
@@ -164,15 +177,15 @@
     }
 
     .bloc1 { background-color: #1a1a2e; }
-    .bloc2 { background-color: #16213e; }
-    .bloc3 { background-color: #0f3460; }
+    .bloc2 { background-color: #1a1a2e;}
+    .bloc3 { background-color: #1a1a2e;}
     .bloc4 { background-color: #1b262c; }
-    .bloc5 { background-color: #202040; }
-    .bloc6 { background-color: #2c2e43; }
+
 
 
     .cta-button {
       margin-top: 2rem;
+      margin-right : 10rem;
       background-color: #ff8c00;
       color: white;
       padding: 0.8rem 1.5rem;
@@ -180,6 +193,10 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
+    }
+
+    .cta-container {
+      text-align: right;
     }
 
     .cta-button:hover {
@@ -206,10 +223,9 @@
   <header>
     <img src="mosa_data_engineering_logo_white.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
     <nav>
-      <a href="#services">Services</a>
       <a href="#solutions">Solutions</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#a-propos">À propos</a>
+      <a href="#équipe">Équipe</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -217,8 +233,9 @@
   <main>
     <!-- Section vidéo d'accroche -->
     <section class="hero">
-      <h2>Des données utiles. Des décisions solides.</h2>
-      <p>Créer les conditions de la confiance dans la donnée est notre priorité. Nous construisons des solutions fiables, alignées, compréhensibles, qui transforment la donnée en levier d'action.</p>
+      <img src="mosa_data_engineering_logo_white_sqr.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
+      <h2>Des données solides pour appuyer votre prise de décision</h2>
+      <p>Chez Mosa Data Engineering, nous construisons des solutions orientées métier, fiables, compréhensibles, qui transforment la donnée en levier d'action.</p>
     </section>
 
     <!-- Bloc 1 -->
@@ -233,6 +250,9 @@
           <li class="typing-delay-5">Appliquer des règles de qualité de données (validation, standardisation, dédoublonnage).</li>
           <li class="typing-delay-6">S’assurer de la traçabilité et de la gouvernance (lignage, documentation, role access).</li>
         </ul>
+        <div class="cta-container">
+          <button class="cta-button">Nos solutions de Data Engineering</button>
+        </div>
       </div>
     </section>
 
@@ -247,6 +267,9 @@
           <li class="typing-delay-4">Implémenter des systèmes de suivi continu, d’alerte et de benchmark.</li>
           <li class="typing-delay-5">Accompagner le changement culturel : formation, adoption, partage.</li>
         </ul>
+        <div class="cta-container">
+          <button class="cta-button">Nos solutions de Business Intelligence</button>
+        </div>
       </div>
     </section>
 
@@ -261,13 +284,18 @@
           <li class="typing-delay-4">Storytelling visuel pour orienter la prise de décision.</li>
           <li class="typing-delay-5">Vues adaptées aux différents publics (direction, équipe terrain, client…).</li>
         </ul>
+        <div class="cta-container">
+          <button class="cta-button">Nos soultions de Data Analyse</button>
+        </div>
       </div>
     </section>
 
     <!-- Bloc 4 -->
     <section class="bloc bloc4">
+
       <div class="container">
-        <h2>Un accompagnement stratégique</h2>
+        <h2>Une équipe pluridisciplinaire, une méthode éprouvée</h2>
+        <h3>Un accompagnement stratégique</h3>
         <blockquote class="typing-delay-1">« Je cherche quelqu’un qui transforme la donnée en valeur. »</blockquote>
         <ul>
           <li class="typing-delay-2">Capacité à dialoguer avec les métiers et comprendre leurs enjeux.</li>
@@ -275,13 +303,8 @@
           <li class="typing-delay-4">Connaissance des référentiels métier.</li>
           <li class="typing-delay-5">Pédagogie et clarté dans les livrables.</li>
         </ul>
-      </div>
-    </section>
 
-    <!-- Bloc 5 -->
-    <section class="bloc bloc5">
-      <div class="container">
-        <h2>Une approche collaborative</h2>
+        <h3>Une approche collaborative</h3>
         <blockquote class="typing-delay-1">« Je veux une collaboration fluide, transparente, structurée. »</blockquote>
         <ul>
           <li class="typing-delay-2">Travail en mode agile (sprints, user stories, feedbacks).</li>
