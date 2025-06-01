@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Insights - Accueil</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .video-background video {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    header {
+      background-color: #0a1f44;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 10rem 2rem;
+      color: white;
+      background: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bloc {
+      padding: 6rem 30rem;
+      color: #fff;
+    }
+
+    .bloc h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .bloc blockquote {
+      font-style: italic;
+      color: #ddd;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .bloc ul {
+      list-style-type: disc;
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .bloc1 { background-color: #1a1a2e; }
+    .bloc2 { background-color: #16213e; }
+    .bloc3 { background-color: #0f3460; }
+    .bloc4 { background-color: #1b262c; }
+    .bloc5 { background-color: #202040; }
+
+
+    .cta-button {
+      margin-top: 2rem;
+      background-color: #ff8c00;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: #e57c00;
+    }
+
+    footer {
+      background-color: #0a1f44;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+    <div class="video-background">
+        <video id="bg-video" autoplay muted loop playsinline onloadedmetadata="this.playbackRate=0.8">
+        <source src="video1.mp4" type="video/mp4">
+        <!-- On peut ajouter d'autres sources JS ultérieurement -->
+        Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+    </div>
+  <header>
+    <h1>Mosa Data Engineering</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section vidéo d'accroche -->
+    <section class="hero">
+      <h2>Des données utiles. Des décisions solides.</h2>
+      <p>Créer les conditions de la confiance dans la donnée est notre priorité. Nous construisons des solutions fiables, alignées, compréhensibles, qui transforment la donnée en levier d'action.</p>
+    </section>
+
+    <!-- Bloc 1 -->
+    <section class="bloc bloc1">
+      <h2>Des données fiables, centralisées et structurées</h2>
+      <blockquote>« Je veux une plateforme de données qui fait autorité dans mon organisation. »</blockquote>
+      <ul>
+        <li>Construire une Single Source of Truth.</li>
+        <li>Intégrer des sources multiples (ERP, CRM, fichiers, APIs…).</li>
+        <li>Mettre en place des pipelines robustes, documentés et monitorés.</li>
+        <li>Appliquer des règles de qualité de données (validation, standardisation, dédoublonnage).</li>
+        <li>S’assurer de la traçabilité et de la gouvernance (lignage, documentation, accès maîtrisé).</li>
+      </ul>
+    </section>
+
+    <!-- Bloc 2 -->
+    <section class="bloc bloc2">
+      <h2>Des indicateurs clairs, alignés, et actionnables</h2>
+      <blockquote>« Je veux des indicateurs qui traduisent la stratégie en objectifs concrets. »</blockquote>
+      <ul>
+        <li>Traduire les objectifs stratégiques en KPI concrets et cohérents.</li>
+        <li>Définir des indicateurs pertinents par métier (marketing, finance, opérations, RH…).</li>
+        <li>Implémenter des systèmes de suivi continu, d’alerte et de benchmark.</li>
+        <li>Accompagner le changement culturel : formation, adoption, partage.</li>
+      </ul>
+    </section>
+
+    <!-- Bloc 3 -->
+    <section class="bloc bloc3">
+      <h2>Des visualisations orientées décision</h2>
+      <blockquote>« Je veux voir ce qui compte, comprendre vite, et agir. »</blockquote>
+      <ul>
+        <li>Conception de tableaux de bord dynamiques (Power BI, Tableau…).</li>
+        <li>Mise en valeur des insights clés : tendances, écarts, risques, opportunités.</li>
+        <li>Storytelling visuel pour orienter la prise de décision.</li>
+        <li>Vues adaptées aux différents publics (direction, équipe terrain, client…).</li>
+      </ul>
+    </section>
+
+    <!-- Bloc 4 -->
+    <section class="bloc bloc4">
+      <h2>Un accompagnement stratégique</h2>
+      <blockquote>« Je cherche quelqu’un qui transforme la donnée en valeur. »</blockquote>
+      <ul>
+        <li>Capacité à dialoguer avec les métiers et comprendre leurs enjeux.</li>
+        <li>Structuration des modèles de données pertinents.</li>
+        <li>Connaissance des référentiels métier (énergie, finance, etc.).</li>
+        <li>Pédagogie et clarté dans les livrables.</li>
+      </ul>
+    </section>
+
+    <!-- Bloc 5 -->
+    <section class="bloc bloc5">
+      <h2>Une approche collaborative</h2>
+      <blockquote>« Je veux une collaboration fluide, transparente, structurée. »</blockquote>
+      <ul>
+        <li>Travail en mode agile (sprints, user stories, feedbacks).</li>
+        <li>Intégration avec PO, analystes métier, développeurs.</li>
+        <li>Documentation complète, transfert de compétences.</li>
+        <li>Autonomie finale des équipes internes.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vincent Bonhomme · Mosa Data Engineering</p>
+    <p>
+      <a href="#contact" style="color: white; text-decoration: underline;">Contact</a> ·
+      <a href="mailto:vincent.bonhomme@gmail.com" style="color: white; text-decoration: underline;">vincent.bonhomme@gmail.com</a>
+    </p>
+  </footer>
+</body>
+</html>
