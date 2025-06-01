@@ -6,6 +6,26 @@
   <title>Data Insights - Accueil</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    header {
+      transition: top 0.3s ease;
+    }
+
+    .hidden-header {
+      top: -100px;
+    }
+
+    .header-hover-zone {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 50px;
+      width: 100%;
+      z-index: 998;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
@@ -38,6 +58,7 @@
     }
     html, body {
       height: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -84,15 +105,20 @@
       min-width: 100%;
       min-height: 100%;
       object-fit: cover;
+
     }
 
     header {
       background-color: #0a1f44;
       color: white;
-      padding: 0.5rem 2rem;
+      padding: 0.1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: fixed;
+      width : 100%;
+      top: 0;
+      z-index: 999;
     }
 
     header h1 {
@@ -100,13 +126,6 @@
       font-size: 1.5rem;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 500;
-      font-size: 20px;
-    }
 
     .hero {
       text-align: center;
@@ -175,7 +194,19 @@
       padding-left: 2rem;
       color: #eee;
     }
-
+    .process { 
+      background-color: #e5e5ed; 
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .process img {
+      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+    }
     .bloc1 { background-color: #1a1a2e; }
     .bloc2 { background-color: #1a1a2e;}
     .bloc3 { background-color: #1a1a2e;}
@@ -185,7 +216,7 @@
 
     .cta-button {
       margin-top: 2rem;
-      margin-right : 10rem;
+      margin-right : 7rem;
       background-color: #ff8c00;
       color: white;
       padding: 0.8rem 1.5rem;
@@ -210,23 +241,113 @@
       padding: 1rem;
       margin-top: 4rem;
     }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-item {
+      min-width: 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    .nav-item > a {
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+      transform-origin: center;
+      font-weight: 500;
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 0.5rem 0.6rem;
+    }
+
+    .nav-item > a::before {
+      content: attr(data-text);
+      font-weight: 600;
+      visibility: hidden;
+      display: block;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .nav-item > a:hover {
+      transform: scale(1.05);
+      color: #ff8c00;
+    }
+
+    .submenu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: -75%;
+      background-color: #0a1f44;
+      padding: 0.5rem 0;
+      min-width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .submenu a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 0.5rem 1rem;
+      transition:  color 0.3s ease, transform 0.3s ease;
+    }
+
+    .submenu a:hover {
+
+      transform: scale(1.05);
+
+      color: #ff8c00;
+
+    }
+
+    .nav-item:hover .submenu,
+    .nav-item:focus-within .submenu {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
   </style>
 </head>
 <body>
+  <div class="header-hover-zone"></div>
   <div class="video-background">
       <video id="bg-video" autoplay muted loop playsinline onloadedmetadata="this.playbackRate=0.8">
       <source src="video1.mp4" type="video/mp4">
-      <!-- On peut ajouter d'autres sources JS ultérieurement -->
       Votre navigateur ne supporte pas les vidéos HTML5.
       </video>
   </div>
   <header>
-    <img src="mosa_data_engineering_logo_white.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
-    <nav>
-      <a href="#solutions">Solutions</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#équipe">Équipe</a>
-      <a href="#contact">Contact</a>
+    <a href="index.html">
+      <img src="mosa_data_engineering_logo_white.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
+    </a>
+      <nav class="main-nav">
+      <div class="nav-item">
+        <a href="solutions.html" data-text="Solutions">Solutions</a>
+        <div class="submenu">
+          <a href="data-engineering.html">Ingénierie des données</a>
+          <a href="business-intelligence.html">Business intelligence</a>
+          <a href="data-analysis.html">Analyse des données</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="portfolio.html" data-text="Portfolio">Portfolio</a></div>
+      <div class="nav-item"><a href="equipe.html" data-text="Équipe">Équipe</a></div>
+      <div class="nav-item"><a href="contact.html" data-text="Contact">Contact</a></div>
     </nav>
   </header>
 
@@ -234,9 +355,12 @@
     <!-- Section vidéo d'accroche -->
     <section class="hero">
       <img src="mosa_data_engineering_logo_white_sqr.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
-      <h2>Des données solides pour appuyer votre prise de décision</h2>
-      <p>Chez Mosa Data Engineering, nous construisons des solutions orientées métier, fiables, compréhensibles, qui transforment la donnée en levier d'action.</p>
+      <h2>Des données solides pour appuyer</h2>
+      <h2>votre prise de décision</h2>
+      <p>Chez Mosa Data Engineering, nous construisons des solutions orientées métier, </p> 
+      <p>fiables, compréhensibles, qui transforment la donnée en possibilité d'action.</p>
     </section>
+
 
     <!-- Bloc 1 -->
     <section class="bloc bloc1">
@@ -314,6 +438,14 @@
         </ul>
       </div>
     </section>
+
+
+    <!-- Bloc 0 process -->
+    <section class="process">
+
+        <img src="illustration data process.png">
+
+    </section>
   </main>
 
   <footer>
@@ -348,6 +480,41 @@
     });
 
     blocs.forEach(bloc => observer.observe(bloc));
+  </script>
+  
+  <script>
+    const header = document.querySelector('header');
+    const hoverZone = document.querySelector('.header-hover-zone');
+
+
+    let shownOnce = false;
+
+    function showHeader() {
+      header.classList.remove('hidden-header');
+      shownOnce = true;
+    }
+
+    function hideHeader() {
+      if (!shownOnce) {
+        header.classList.add('hidden-header');
+      }
+    }
+
+    hoverZone.addEventListener('mouseenter', showHeader);
+    hoverZone.addEventListener('mouseleave', () => {
+      if (window.scrollY === 0) {
+        hideHeader();
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        showHeader();
+      }
+
+    });
+
+    hideHeader();
   </script>
 </body>
 </html>
