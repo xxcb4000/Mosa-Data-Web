@@ -6,22 +6,7 @@
   <title>Data Insights - Accueil</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    header {
-      transition: top 0.3s ease;
-    }
 
-    .hidden-header {
-      top: -100px;
-    }
-
-    .header-hover-zone {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 50px;
-      width: 100%;
-      z-index: 998;
-    }
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -57,7 +42,8 @@
       animation-delay: 0.6s;
     }
     html, body {
-      height: 100%;
+      margin:0;
+      padding:0;
       overflow-x: hidden;
     }
 
@@ -72,6 +58,7 @@
 
     main {
       flex: 1;
+
     }
 
     @keyframes fadeIn {
@@ -94,11 +81,11 @@
       position: fixed;
       top: 0;
       left: 0;
-
       width: 160%;
+      height: 700px;
       overflow: hidden;
       z-index: -1;
-      animation: fadeIn 3s ease-in-out;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .video-background video {
@@ -117,9 +104,15 @@
       align-items: center;
       position: fixed;
       width : 100%;
-      top: 0;
+      top: -100px;
       z-index: 999;
+      transition: top 0.3s ease;
     }
+    header.visible{
+      top:0;
+    }
+
+
 
     header h1 {
       margin: 0;
@@ -144,7 +137,7 @@
 
     .bloc {
       background-color: transparent;
-      padding: 6rem 2rem;
+      padding: 3rem 2rem;
       display: flex;
       justify-content: center;
       position: relative;
@@ -239,7 +232,8 @@
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 4rem;
+
+      height: 300px;
     }
     .main-nav {
       display: flex;
@@ -355,8 +349,8 @@
     <!-- Section vidéo d'accroche -->
     <section class="hero">
       <img src="mosa_data_engineering_logo_white_sqr.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
-      <h2>Des données solides pour appuyer</h2>
-      <h2>votre prise de décision</h2>
+      <h2>Des données solides pour</h2>
+      <h2>appuyer votre prise de décision</h2>
       <p>Chez Mosa Data Engineering, nous construisons des solutions orientées métier, </p> 
       <p>fiables, compréhensibles, qui transforment la donnée en possibilité d'action.</p>
     </section>
@@ -483,38 +477,24 @@
   </script>
   
   <script>
-    const header = document.querySelector('header');
-    const hoverZone = document.querySelector('.header-hover-zone');
+
+        const navbar = document.querySelector('header');
+        const handleScroll = () => {
+
+            if (window.scrollY > 0) { // Si l'utilisateur défile de plus de 50px
+                navbar.classList.add('visible');
+            } else if (window.scrollY == 0 && event.clientY < 100) {
+                navbar.classList.add('visible');
+            } else { // Si l'utilisateur revient en haut
+                navbar.classList.remove('visible');
+            }
+        };
+    
+        // Ajoute un écouteur pour l'événement de défilement
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('mousemove', handleScroll);
 
 
-    let shownOnce = false;
-
-    function showHeader() {
-      header.classList.remove('hidden-header');
-      shownOnce = true;
-    }
-
-    function hideHeader() {
-      if (!shownOnce) {
-        header.classList.add('hidden-header');
-      }
-    }
-
-    hoverZone.addEventListener('mouseenter', showHeader);
-    hoverZone.addEventListener('mouseleave', () => {
-      if (window.scrollY === 0) {
-        hideHeader();
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        showHeader();
-      }
-
-    });
-
-    hideHeader();
   </script>
 </body>
 </html>
