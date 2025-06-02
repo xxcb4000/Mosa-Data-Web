@@ -1,0 +1,324 @@
+
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      animation: typing 0.3s steps(40, end) forwards;
+    }
+
+    .typing-delay-1 {
+      animation-delay: 0.1s;
+    }
+    .typing-delay-2 {
+      animation-delay: 0.2s;
+    }
+    .typing-delay-3 {
+      animation-delay: 0.3s;
+    }
+    .typing-delay-4 {
+      animation-delay: 0.4s;
+    }
+    .typing-delay-5 {
+      animation-delay: 0.5s;
+    }
+    .typing-delay-6 {
+      animation-delay: 0.6s;
+    }
+    html, body {
+      margin:0;
+      padding:0;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+
+    main {
+      flex: 1;
+
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 160%;
+      height: 700px;
+      overflow: hidden;
+      z-index: -1;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .video-background video {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+
+    }
+
+    header {
+      background-color: #0a1f44;
+      color: white;
+      padding: 0.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width : 100%;
+      top: -100px;
+      z-index: 999;
+      transition: top 0.3s ease;
+    }
+    header.visible{
+      top:0;
+    }
+
+
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+
+    .hero {
+      text-align: center;
+      padding: 10rem 2rem;
+      color: white;
+      background: none;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 40px;
+    }
+    .hero p {
+      font-size: 20px;
+    }
+
+    .bloc {
+      background-color: transparent;
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .bloc .container {
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 3rem;
+      margin: 0 5rem;
+      border-radius: 12px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .bloc .container.animate {
+      opacity: 1;
+      transform: translateY(0);
+      animation-play-state: running;
+    }
+
+    .bloc h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    .bloc h3 {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .bloc blockquote {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      border-left: 4px solid #ff8c00;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .bloc ul {
+      list-style-type: disc;
+      padding-left: 2rem;
+      color: #eee;
+    }
+    .process { 
+      background-color: #e5e5ed; 
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .process img {
+      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+    }
+    .bloc1 { background-color: #1a1a2e; }
+    .bloc2 { background-color: #1a1a2e;}
+    .bloc3 { background-color: #1a1a2e;}
+    .bloc4 { background-color: #1b262c; }
+
+
+
+    .cta-button {
+      margin-top: 2rem;
+      margin-right : 7rem;
+      background-color: #ff8c00;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .cta-container {
+      text-align: right;
+    }
+
+    .cta-button:hover {
+      background-color: #e57c00;
+    }
+
+    footer {
+      background-color: #0a1f44;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+
+      height: 460px;
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-item {
+      min-width: 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    .nav-item > a {
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+      transform-origin: center;
+      font-weight: 500;
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 0.5rem 0.6rem;
+    }
+
+    .nav-item > a::before {
+      content: attr(data-text);
+      font-weight: 600;
+      visibility: hidden;
+      display: block;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .nav-item > a:hover {
+      transform: scale(1.05);
+      color: #ff8c00;
+    }
+
+    .submenu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: -75%;
+      background-color: #0a1f44;
+      padding: 0.5rem 0;
+      min-width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .submenu a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 0.5rem 1rem;
+      transition:  color 0.3s ease, transform 0.3s ease;
+    }
+
+    .submenu a:hover {
+
+      transform: scale(1.05);
+
+      color: #ff8c00;
+
+    }
+
+    .nav-item:hover .submenu,
+    .nav-item:focus-within .submenu {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .iframefooter {
+    width:100%;
+    height:100%;
+    border:none;
+    overflow:hidden;
+    }
+
+    @media (max-width:768px) {
+    .iframefooter {
+        height: 300px;
+    }
+    }
+    
