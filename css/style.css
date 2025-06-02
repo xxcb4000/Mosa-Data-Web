@@ -201,8 +201,6 @@
 
 
     .cta-button {
-      margin-top: 2rem;
-      margin-right : 7rem;
       background-color: #ff8c00;
       color: white;
       padding: 0.8rem 1.5rem;
@@ -214,7 +212,16 @@
 
     .cta-container {
       text-align: right;
+      padding :2rem 7rem 0 0;
     }
+    @media (max-width:768px) {
+    .cta-container {
+        text-align: center;
+        padding : 0;
+    }
+    }
+    
+    
 
     .cta-button:hover {
       background-color: #e57c00;
