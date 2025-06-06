@@ -9,12 +9,7 @@
 </head>
 <body>
   <div class="header-hover-zone"></div>
-  <div class="video-background">
-      <video id="bg-video" autoplay muted loop playsinline onloadedmetadata="this.playbackRate=0.8">
-      <source src="../assets/video1LQ.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas les vidéos HTML5.
-      </video>
-  </div>
+
   <header>
     <a href="index.html">
       <img src="../assets/mosa_data_engineering_logo_white.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
@@ -25,79 +20,42 @@
         <div class="submenu">
           <a href="data-engineering.html">Ingénierie des données</a>
           <a href="business-intelligence.html">Business intelligence</a>
-          <a href="data-analyse.html">Analyse des données</a>
+          <a href="data-analysis.html">Analyse des données</a>
         </div>
       </div>
       <div class="nav-item"><a href="portfolio.html" data-text="Portfolio">Portfolio</a></div>
       <div class="nav-item">
         <a href="blog.html" data-text="Blog">Blog</a>
+
       </div>
       <div class="nav-item">
         <a href="contact.html" data-text="Contact">Contact</a>
+
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- Section vidéo d'accroche -->
-    <section class="hero">
-      <img src="../assets/mosa_data_engineering_logo_white_sqr.png" alt="Mosa Data Engineering Logo" style="height: 80px;">
-      <h2>Des données solides pour appuyer <br>la prise de décision</h2>
-      <p>Chez Mosa Data Engineering, nous construisons des solutions orientées métier, </br> fiables, compréhensibles, qui transforment la donnée en possibilité d'action.</p>
-    </section>
 
 
-    <!-- Bloc 1 -->
-    <section class="bloc bloc1">
-      <div class="container">
-        <h2>Des données fiables, centralisées et structurées</h2>
-        <blockquote class="typing-delay-1">« Je veux une plateforme de données qui fait autorité dans mon organisation. »</blockquote>
-        <ul>
-          <li class="typing-delay-2">Construire un référentiel unique à partir de données internes et externes.</li>
-          <li class="typing-delay-3">Intégrer des sources multiples (ERP, CRM, Excel, APIs…).</li>
-          <li class="typing-delay-4">Mettre en place des pipelines de données robustes, documentés et monitorés.</li>
-          <li class="typing-delay-5">Appliquer des règles de qualité de données (validation, standardisation, dédoublonnage).</li>
-          <li class="typing-delay-6">S’assurer de la traçabilité et de la gouvernance (lignage, documentation, role access).</li>
-        </ul>
-        <div class="cta-container">
-          <a href="data-engineering.html" class="cta-button">Nos solutions de Data Engineering</a>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Bloc 2 -->
     <section class="bloc bloc2">
       <div class="container">
-        <h2>Des indicateurs clairs, cohérents et opérationnels</h2>
+        <h2>Des indicateurs clairs, alignés, et actionnables</h2>
         <blockquote class="typing-delay-1">« Je veux des indicateurs qui traduisent la stratégie en objectifs concrets. »</blockquote>
         <ul>
           <li class="typing-delay-2">Traduire les objectifs stratégiques en KPI concrets et cohérents.</li>
-          <li class="typing-delay-3">Définir des indicateurs pertinents par métier (marketing, finance, opérations, RH…).</li>
+          <li class="typing-delay-3">Définir des indicateurs pertinents par métier (marketing, finance, opérations, RH…).li>
           <li class="typing-delay-4">Implémenter des systèmes de suivi continu, d’alerte et de benchmark.</li>
           <li class="typing-delay-5">Accompagner le changement culturel : formation, adoption, partage.</li>
         </ul>
-        <div class="cta-container">
-          <a href="business-intelligence.html" class="cta-button">Nos solutions de Business Intelligence</a>
-        </div>
+
       </div>
     </section>
 
-    <!-- Bloc 3 -->
-    <section class="bloc bloc3">
-      <div class="container">
-        <h2>Des visualisations orientées décision</h2>
-        <blockquote class="typing-delay-1">« Je veux comprendre et faire comprendre pour agir. »</blockquote>
-        <ul>
-          <li class="typing-delay-2">Conception de tableaux de bord dynamiques (Power BI, Tableau…).</li>
-          <li class="typing-delay-3">Mise en évidence des éléments significatifs : tendances, écarts, risques, opportunités.</li>
-          <li class="typing-delay-4">Storytelling visuel pour orienter la prise de décision.</li>
-          <li class="typing-delay-5">Vues adaptées aux différents publics (direction, équipe terrain, client…).</li>
-        </ul>
-        <div class="cta-container">
-          <a href="data-analyse.html" class="cta-button">Nos soultions de Data Analyse</a>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Bloc 4 -->
     <section class="bloc bloc4">
@@ -158,19 +116,24 @@
   </script>
   
   <script>
+
         const navbar = document.querySelector('header');
         const handleScroll = () => {
-            if (window.scrollY > 0) { 
+
+            if (window.scrollY > 0) { // Si l'utilisateur défile de plus de 50px
                 navbar.classList.add('visible');
             } else if (window.scrollY == 0 && event.clientY < 100) {
                 navbar.classList.add('visible');
-            } else { 
+            } else { // Si l'utilisateur revient en haut
                 navbar.classList.remove('visible');
             }
         };
+    
+        // Ajoute un écouteur pour l'événement de défilement
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('mousemove', handleScroll);
+
+
   </script>
-  
 </body>
 </html>
